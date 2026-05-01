@@ -1,4 +1,4 @@
-# TOC Widget
+# Table of Contents Widget for WordPress
 
 This essential utility plugin is designed to enhance post readability and navigation by automatically generating a dynamic Table of Contents (TOC) for blog posts.
 
