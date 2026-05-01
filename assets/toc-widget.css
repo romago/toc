@@ -1,0 +1,158 @@
+/**
+ * Table of Contents Widget Styles
+ */
+.toc-widget {
+    background: #ffffff;
+    margin: 0 20px 20px 20px;
+    padding: 20px 0;
+    border-top: 1px solid #E9EAEB;
+    border-bottom: 1px solid #E9EAEB;
+}
+
+.toc-widget .widgettitle {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #003459;
+    padding-bottom: 5px;
+    gap: 15px;
+    line-height: 14px;
+    align-items: anchor-center;
+}
+
+#table-of-contens h2.widgettitle:before {
+    content: '';
+    background: url('list.svg') no-repeat 0 0 transparent;
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: relative;
+}
+
+.toc-nav {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fl-widget ul.toc-list li {
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.toc-item {
+    margin-bottom: 8px;
+}
+a.toc-link {
+    display: block;
+    text-decoration: none;
+    padding: 0;
+    transition: all 0.2s ease;
+    position: relative;
+    font-size: 18px;
+    line-height: 22px;
+    color: #444546;
+}
+
+.toc-link:hover {
+    text-decoration: none;
+}
+.toc-link:focus {
+    outline: none;
+}
+.toc-list-nested.active-group,
+.toc-h2.active {
+    text-decoration: underline;
+}
+li.toc-list-nested {
+    height: 0;
+    overflow: hidden;
+}
+.toc-h2:has(+li.active-group),
+.toc-h2.active+li.toc-list-nested {
+    /* background: #f7f6f2; */
+    text-decoration: underline;
+}
+.toc-list-nested.active-group,
+.toc-h2.active+li.toc-list-nested {
+    height: auto;
+}
+.toc-item.active {
+    /* Use text-shadow instead of font-weight to prevent text shifting */
+    text-shadow: 0.5px 0 0 currentColor;
+}
+li.toc-list-nested {
+    position: relative;
+}
+li.toc-list-nested ul li.toc-item {
+    padding-left: 8px;
+    display: flex;
+}
+li.toc-list-nested ul li.toc-item::before {
+    content: "\003e";
+    color: #444546;
+    font-size: 10px;
+    line-height: 2.7;
+    font-weight: 600;
+}
+li.toc-list-nested ul li.toc-item a {
+    padding-left: 3px;
+}
+.toc-h3 .toc-link:hover {
+    /* background-color: #f7f6f2; */
+    text-decoration: underline;
+}
+/* Nested lists */
+.toc-list-nested {
+    margin-left: 0;
+    padding-left: 10px;
+}
+/* Active/current link styling */
+.toc-link.active {
+    /* background-color: #f7f6f2; */
+    text-decoration: underline;
+
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .widget.toc-widget {
+        display: none;
+    }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add some spacing to headings with anchors */
+body.single-post h2[id], body.single-post h3[id] {
+    scroll-margin-top: 20px;
+}
+body.single-post h2[id]:target::before, body.single-post h3[id]:target::before {
+    content: none;
+}
+/* Optional: Add a subtle animation when jumping to sections */
+/* body.single-post h2[id]:target, body.single-post h3[id]:target {
+    animation: highlight-flash 3s ease-in-out;
+}
+
+@keyframes highlight-flash {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #ffdbbf;
+        padding: 5px;
+    }
+    100% {
+        background-color: transparent;
+    }
+} */
